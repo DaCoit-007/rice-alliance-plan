@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>米饭联盟「全城巡游集米 + 村晚」落地方案 · 内部脑暴讨论稿</title>
+<style>
+  :root{
+    --rice:#F6B042;        /* 米黄主色 */
+    --rice-deep:#E8941A;   /* 深米 */
+    --red:#D94A3D;         /* 喜庆红 */
+    --ink:#2B2622;         /* 墨字 */
+    --ink2:#6B6258;        /* 次级字 */
+    --line:#EADFCB;        /* 浅边框 */
+    --bg:#FBF7EF;          /* 米白背景 */
+    --card:#FFFFFF;
+    --green:#5B8C5A;
+    --blue:#3F7CAC;
+    --shadow:0 4px 18px rgba(180,140,60,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:980px;margin:0 auto;padding:0 20px 80px}
+
+  /* ===== Hero ===== */
+  .hero{background:linear-gradient(135deg,#FFE9C2 0%,#FFD590 45%,#F6B042 100%);
+    border-radius:0 0 32px 32px;padding:54px 36px 46px;position:relative;overflow:hidden;
+    box-shadow:var(--shadow)}
+  .hero::after{content:"";position:absolute;right:-40px;bottom:-40px;width:220px;height:220px;
+    background:radial-gradient(circle,rgba(255,255,255,.45),transparent 70%);border-radius:50%}
+  .hero .tag{display:inline-block;background:rgba(217,74,61,.92);color:#fff;font-size:13px;
+    padding:5px 14px;border-radius:20px;letter-spacing:.5px;margin-bottom:18px;font-weight:600}
+  .hero h1{font-size:32px;line-height:1.3;color:#5A3A0E;margin-bottom:14px;font-weight:800}
+  .hero .sub{font-size:15px;color:#7A5418;max-width:640px}
+  .hero .meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
+  .hero .meta span{background:rgba(255,255,255,.65);color:#6A4810;font-size:13px;
+    padding:6px 14px;border-radius:18px;font-weight:600}
+
+  /* ===== 主线条 ===== */
+  .mainline{margin:32px 0;background:var(--ink);color:#FFE9C2;border-radius:18px;
+    padding:26px 30px;text-align:center;box-shadow:var(--shadow);position:relative}
+  .mainline .lbl{font-size:12px;color:var(--rice);letter-spacing:3px;margin-bottom:10px}
+  .mainline .txt{font-size:21px;font-weight:800;line-height:1.5;letter-spacing:.5px}
+  .mainline .txt b{color:var(--rice)}
+
+  /* ===== section ===== */
+  section{margin-top:46px}
+  .sec-head{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+  .sec-head .no{width:34px;height:34px;border-radius:10px;background:var(--rice);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex:none;
+    box-shadow:0 3px 8px rgba(230,148,26,.35)}
+  .sec-head h2{font-size:23px;font-weight:800;color:var(--ink)}
+  .sec-head .en{font-size:12px;color:var(--ink2);margin-top:2px;letter-spacing:1px}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 26px;
+    box-shadow:var(--shadow);margin-bottom:18px}
+  .card h3{font-size:17px;color:var(--rice-deep);margin-bottom:12px;font-weight:700;
+    display:flex;align-items:center;gap:8px}
+  .card h3::before{content:"";width:6px;height:18px;background:var(--rice);border-radius:3px;display:inline-block}
+  p.lead{color:var(--ink2);margin-bottom:8px}
+  ul.clean{list-style:none}
+  ul.clean li{padding:6px 0 6px 24px;position:relative;color:var(--ink)}
+  ul.clean li::before{content:"●";color:var(--rice);position:absolute;left:4px;font-size:11px;top:9px}
+  .hl{color:var(--red);font-weight:700}
+  .muted{color:var(--ink2);font-size:14px}
+
+  /* ===== 两段式流程 ===== */
+  .flow{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:var(--shadow)}
+  .flow-stage{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .stage-box{flex:1;min-width:240px;border-radius:14px;padding:18px 20px}
+  .stage-1{background:linear-gradient(135deg,#FFF3DC,#FFE6BC);border:1px solid #F2D49A}
+  .stage-2{background:linear-gradient(135deg,#FBE0DC,#F6C9C2);border:1px solid #ECB3A9}
+  .stage-box .t{font-weight:800;font-size:16px;margin-bottom:6px}
+  .stage-1 .t{color:var(--rice-deep)} .stage-2 .t{color:var(--red)}
+  .stage-box .d{font-size:13.5px;color:var(--ink2)}
+  .arrow-down{text-align:center;font-size:24px;color:var(--rice-deep);margin:8px 0;font-weight:800}
+
+  /* 12城 chips */
+  .cities{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .cities span{background:#FFF;border:1px solid var(--line);border-radius:20px;padding:5px 13px;
+    font-size:13px;color:var(--ink);font-weight:600}
+  .cities span.fin{background:var(--red);color:#fff;border-color:var(--red)}
+
+  /* 三件事 */
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .mini{background:#FFFCF5;border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center}
+  .mini .ic{font-size:28px;margin-bottom:8px}
+  .mini .mt{font-weight:800;color:var(--ink);margin-bottom:6px;font-size:15px}
+  .mini .md{font-size:13px;color:var(--ink2)}
+
+  /* 礼包 */
+  .gift{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:6px}
+  .gift .g{border-radius:14px;padding:18px;color:#fff;text-align:center}
+  .g1{background:linear-gradient(135deg,#F6B042,#E8941A)}
+  .g2{background:linear-gradient(135deg,#D94A3D,#B83A2E)}
+  .g3{background:linear-gradient(135deg,#5B8C5A,#467045)}
+  .gift .g .gi{font-size:26px;margin-bottom:6px}
+  .gift .g .gt{font-weight:800;margin-bottom:4px}
+  .gift .g .gd{font-size:12.5px;opacity:.95;line-height:1.5}
+
+  /* 时间轴 村晚 */
+  .timeline{position:relative;padding-left:8px}
+  .tl-item{display:flex;gap:14px;padding:8px 0;align-items:flex-start}
+  .tl-dot{width:54px;flex:none;text-align:center}
+  .tl-dot .badge{display:inline-block;font-size:11px;font-weight:800;padding:3px 8px;border-radius:12px}
+  .off{background:var(--red);color:#fff} .free{background:#E6F0E6;color:var(--green);border:1px solid #BFD9BF}
+  .tl-body{background:#FFFCF5;border:1px solid var(--line);border-radius:12px;padding:12px 16px;flex:1}
+  .tl-body .tt{font-weight:700;color:var(--ink);margin-bottom:3px}
+  .tl-body .tx{font-size:13px;color:var(--ink2)}
+  .star{color:var(--red);font-weight:800}
+
+  /* 传播三阶段 */
+  .phases{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:8px}
+  .ph{padding:18px 14px;border-right:2px dashed var(--line);position:relative}
+  .ph:last-child{border-right:none}
+  .ph .pn{font-size:12px;color:#fff;background:var(--rice-deep);display:inline-block;
+    padding:2px 10px;border-radius:12px;margin-bottom:8px;font-weight:700}
+  .ph:nth-child(2) .pn{background:var(--red)}
+  .ph:nth-child(3) .pn{background:var(--ink)}
+  .ph:nth-child(4) .pn{background:var(--green)}
+  .ph .pt{font-weight:800;margin-bottom:6px;font-size:14.5px}
+  .ph .pd{font-size:12.5px;color:var(--ink2);line-height:1.6}
+
+  /* 平台矩阵 */
+  table{width:100%;border-collapse:collapse;font-size:14px;background:#fff;border-radius:12px;overflow:hidden}
+  th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line)}
+  th{background:#FBEFD8;color:var(--rice-deep);font-weight:700}
+  tr:last-child td{border-bottom:none}
+  td .k{font-weight:700;color:var(--ink)}
+
+  /* 串联线 */
+  .chain{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:8px}
+  .chain .node{background:#FFF;border:1px solid var(--rice);color:var(--rice-deep);
+    border-radius:10px;padding:8px 12px;font-size:13px;font-weight:700}
+  .chain .ar{color:var(--rice-deep);font-weight:800}
+
+  /* 待确认 */
+  .todo{background:#FFF8EC;border:1px dashed var(--rice-deep);border-radius:14px;padding:18px 22px}
+  .todo li{padding:5px 0 5px 22px;position:relative;color:var(--ink)}
+  .todo li::before{content:"☐";position:absolute;left:0;color:var(--rice-deep)}
+
+  .note{background:#FCEEEA;border-left:4px solid var(--red);border-radius:8px;padding:12px 16px;
+    font-size:13.5px;color:#8a3328;margin-top:12px}
+
+  /* 筛选优先级 */
+  .tiers{display:flex;flex-direction:column;gap:10px}
+  .tier{display:flex;align-items:flex-start;gap:14px;border:1px solid var(--line);border-radius:12px;
+    padding:14px 16px;background:#FFFCF5;position:relative}
+  .tier .rk{width:30px;height:30px;border-radius:8px;color:#fff;font-weight:800;flex:none;
+    display:flex;align-items:center;justify-content:center;font-size:15px}
+  .tier.t1 .rk{background:#D94A3D}.tier.t2 .rk{background:#E8941A}
+  .tier.t3 .rk{background:#5B8C5A}.tier.t4 .rk{background:#3F7CAC}
+  .tier .tb{flex:1}
+  .tier .tt{font-weight:800;color:var(--ink);margin-bottom:3px}
+  .tier .tx{font-size:13.5px;color:var(--ink2)}
+  .tier .seat{font-size:12px;font-weight:700;color:var(--rice-deep);background:#FBEFD8;
+    padding:3px 10px;border-radius:10px;flex:none;white-space:nowrap}
+  .capbar{display:flex;align-items:center;gap:12px;background:var(--ink);color:#FFE9C2;
+    border-radius:12px;padding:14px 20px;margin-bottom:16px}
+  .capbar .big{font-size:26px;font-weight:800;color:var(--rice)}
+
+  /* 总话题 */
+  .topic{background:linear-gradient(135deg,#D94A3D,#B83A2E);color:#fff;border-radius:16px;
+    padding:24px 28px;text-align:center;box-shadow:var(--shadow)}
+  .topic .lb{font-size:12px;letter-spacing:2px;opacity:.85;margin-bottom:8px}
+  .topic .tg{font-size:24px;font-weight:800;letter-spacing:.5px}
+  .topic .ds{font-size:13.5px;opacity:.92;margin-top:8px}
+
+  /* 分话题创意卡 */
+  .ideas{display:flex;flex-direction:column;gap:14px}
+  .idea{border:1px solid var(--line);border-radius:14px;padding:18px 20px;background:#FFFCF5}
+  .idea .ih{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+  .idea .ist{font-size:12px;font-weight:700;color:#fff;background:var(--rice-deep);
+    padding:3px 10px;border-radius:12px;flex:none}
+  .idea .itag{font-size:16px;font-weight:800;color:var(--red)}
+  .idea .iph{font-size:12px;color:var(--ink2);background:#FBEFD8;padding:2px 9px;border-radius:10px}
+  .idea ul.clean li{padding:4px 0 4px 22px;font-size:14px}
+  .idea ul.clean li::before{top:8px}
+
+  footer{text-align:center;color:var(--ink2);font-size:13px;margin-top:50px;padding-top:24px;border-top:1px solid var(--line)}
+
+  @media(max-width:680px){
+    .grid3,.gift,.phases{grid-template-columns:1fr}
+    .hero h1{font-size:25px}.mainline .txt{font-size:17px}
+    .ph{border-right:none;border-bottom:2px dashed var(--line)}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <span class="tag">内部脑暴讨论稿 · 欢迎拍砖</span>
+  <h1>米饭联盟「全城巡游集米 + 村晚」<br>落地方案</h1>
+  <p class="sub">承接此前三方向创意提案，选定「全国巡回集米 + 米饭联盟村晚」方向落地。本页含方案总览、集米玩法、深圳村晚、传播宣发四大板块。预算与人力交执行团队各自规划，本方案不展开。</p>
+  <div class="meta">
+    <span>🗓 村晚暂定 2026-12-05（12月第一个周六）</span>
+    <span>📍 深圳痛城 · 终点站</span>
+    <span>🏙 12 城全城巡游</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="mainline">
+    <div class="lbl">对外统一一句话主线</div>
+    <div class="txt">全国米饭，<b>一城一桶米</b>，一路聚到深圳，<b>填满米饭联盟</b>，村晚开席。</div>
+  </div>
+
+  <!-- 01 总览 -->
+  <section>
+    <div class="sec-head"><div class="no">01</div>
+      <div><h2>方案总览</h2><div class="en">OVERVIEW · 两段式结构</div></div></div>
+
+    <div class="flow">
+      <div class="flow-stage">
+        <div class="stage-box stage-1">
+          <div class="t">第一段 · 全城巡游集米（12 城 · 轻触点）</div>
+          <div class="d">每城是一个轻量触点，核心服务两件事：服务当地玩家 + 产出传播素材。玩家做三件事，给城市添一粒米。</div>
+          <div class="cities">
+            <span>北京</span><span>上海</span><span>广州</span><span class="fin">深圳·终点</span>
+            <span>厦门</span><span>重庆</span><span>成都</span><span>青岛</span>
+            <span>郑州</span><span>南阳</span><span>潍坊</span><span>杭州</span>
+          </div>
+        </div>
+      </div>
+      <div class="arrow-down">↓ 各城代表色假米汇集 ↓</div>
+      <div class="flow-stage">
+        <div class="stage-box stage-2">
+          <div class="t">第二段 · 深圳村晚开席（12/05 · 终点引爆）</div>
+          <div class="d">各城讨来的假米 → 汇入巨型 Logo 灯箱透明装置 → 填满亮灯 → 吃饭大会开席 → 城市菜揭晓 / coser 传菜 / 玩家整活 / 荣耀颁奖 / 全员合影 → 传播刷屏。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:18px">
+      <h3>城市站不分级 · 统一一套轻量方案</h3>
+      <p class="lead">12 城<span class="hl">不做成熟/成长分级</span>，统一一套可复用的轻量落地方案，各城落地量级由执行同学按当地实际快速调整。深圳既是巡游城市之一，也是村晚终点站。</p>
+    </div>
+
+    <div class="card">
+      <h3>活动目标方向</h3>
+      <ul class="clean">
+        <li><b>玩家参与</b>：12 城玩家到场参与集米、完成「三件事」</li>
+        <li><b>社群沉淀</b>：借集米动作把玩家沉进分部群</li>
+        <li><b>传播声量</b>：把「全国聚米 → 深圳开席」讲成出圈故事</li>
+        <li><b>终点引爆</b>：深圳村晚成为周年庆记忆点</li>
+        <li><b>品牌资产</b>：强化「米饭联盟」组织力与玩家归属</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 02 集米玩法 -->
+  <section>
+    <div class="sec-head"><div class="no">02</div>
+      <div><h2>集米玩法落地盘</h2><div class="en">CITY STATION · 统一可复用轻量方案</div></div></div>
+
+    <div class="card">
+      <h3>玩家动线（全程 ≤ 5 分钟 · 边玩边出片）</h3>
+      <div class="chain">
+        <span class="node">① 到场签到</span><span class="ar">→</span>
+        <span class="node">② 做三件事</span><span class="ar">→</span>
+        <span class="node">③ 端电饭煲讨饭集米</span><span class="ar">→</span>
+        <span class="node">④ 围炉吃饭盒 + 领礼包打卡</span>
+      </div>
+      <p class="muted" style="margin-top:12px">设计原则：进场即可顺手完成，不排长队、不设淘汰、不卡门槛。轻、快、能出片、能进群、有梗可拍。</p>
+    </div>
+
+    <div class="card">
+      <h3>核心串联：做三件事 → 讨饭集米 → 领礼包 + 米饭纪念票</h3>
+      <div class="grid3">
+        <div class="mini"><div class="ic">👥</div><div class="mt">加分部群</div>
+          <div class="md">把一次性到场玩家沉淀为可长期触达的社群——<b>本次最重要的转化</b></div></div>
+        <div class="mini"><div class="ic">🍲</div><div class="mt">城市菜投票</div>
+          <div class="md">钩子：你投的菜，<b>村晚真的会上桌</b>，提前咬合深圳终点</div></div>
+        <div class="mini"><div class="ic">✍️</div><div class="mt">留言墙留言</div>
+          <div class="md">解决「个体不可见」，城市留言<b>汇总到深圳现场</b>展示</div></div>
+      </div>
+      <p class="muted" style="margin-top:12px">完成三件事 + 参与讨饭集米 → 领普发礼包，并获得一张 <b>「米饭纪念票」</b>（深圳吃席抽签时<b>享更高中签权重</b>，非直接资格，最终以官方报名抽签为准）。</p>
+    </div>
+
+    <div class="card">
+      <h3>普发礼包 · 3 件套（人人完成即得）</h3>
+      <div class="gift">
+        <div class="g g1"><div class="gi">🌾</div><div class="gt">一粒米</div>
+          <div class="gd">玩家自带，或现场领 3D 打印假米；可带走 1 粒作纪念</div></div>
+        <div class="g g2"><div class="gi">🎫</div><div class="gt">米饭纪念票</div>
+          <div class="gd">纪念性周边 · 可秀可晒有梗。附带深圳吃席抽签加权，<b>非直接资格</b></div></div>
+        <div class="g g3"><div class="gi">🎁</div><div class="gt">一款普发周边</div>
+          <div class="gd">执行按库存/成本选：吧唧 / 贴纸 / 滴胶 / 镭射票 / 布章 等</div></div>
+      </div>
+      <div class="note" style="background:#FFF1E0;border-left-color:var(--rice-deep);color:#7A5418">
+        <b>关于「米饭纪念票」（重要 · 防误解口径）：</b>它首先是一张<b>纪念票周边</b>（好看、可晒、有梗），其附带的是<b>深圳吃席抽签时的「更高中签权重」</b>——<span class="hl">不等于直接吃席资格</span>。最终到场名单以官方报名抽签为准，<b>持票仍需抽签、不必然到场</b>。所有对外文案都按此措辞，避免「有票就能吃」的承诺感引发误解。
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>核心道具与装置（填充物统一用假米）</h3>
+      <ul class="clean">
+        <li>装置内填充统一用 <b>大颗粒米道具</b>（大气球米 / 棉花抱枕米 / 轻质大颗粒填充物），不用真米，便于制作、复用、控成本，视觉冲击力更强</li>
+        <li><b>城市站 · 装置电饭煲</b>（大）：一台放大版电饭煲装置，<b>展示 + 互动</b>用，做成本城的「米桶」主视觉与打卡点</li>
+        <li><b>城市站 · 道具电饭煲</b>（小，<b>可用真电饭煲</b>）：玩家端着到处「讨饭集米」、拍内容用，主打互动与出片</li>
+        <li><b>深圳终点 · 仪式装置</b>：<b>巨型 Logo 灯箱透明装置</b>，各城假米汇入填满 → 亮灯 → 开席，作为吃饭大会的核心视觉与情绪爆点</li>
+      </ul>
+      <p class="muted" style="margin-top:8px">城市站「装置电饭煲」负责展示打卡、「道具电饭煲」负责讨饭出片；深圳巨型 Logo 灯箱负责开席的仪式与冲击力。</p>
+    </div>
+
+    <div class="card">
+      <h3>巡城玩法升级：米饭神秘仪式 · 讨饭集米 + 围炉吃饭盒</h3>
+      <p class="lead">在常规打卡之上，叠一层「全国米饭蹲一块儿真吃饭」的围炉仪式感。轻量、不复杂、人人能参与。</p>
+      <ul class="clean">
+        <li><b>讨饭集米</b>：玩家端着小电饭煲在现场（及周边商圈）「化缘讨米」——找 NPC、找其他玩家、找路人讨一勺假米，凑够一煲倒进本城大电饭煲</li>
+        <li><b>米饭神秘仪式</b>：即<b>围炉吃饭盒</b>——集米完成后，大家围坐在大电饭煲前一起吃饭盒，主打「全国米饭蹲一块儿真吃饭」的真实感与团建感。仪式感来自「真的一起蹲着吃」这件事本身</li>
+      </ul>
+      <div class="note">神秘仪式 = 围炉吃饭，不做额外的伪仪式包装（念米经/添米礼/暗号等），避免复杂化，让「蹲着吃盒饭」这件事本身就是梗与画面。</div>
+    </div>
+  </section>
+
+  <!-- 03 村晚 -->
+  <section>
+    <div class="sec-head"><div class="no">03</div>
+      <div><h2>深圳终点站 · 吃饭大会</h2><div class="en">FINALE · 游乐园自由逛 + 漫展团建饭局</div></div></div>
+
+    <div class="card">
+      <h3>整体调性</h3>
+      <ul class="clean">
+        <li>参照「游乐园自由逛 + 漫展团建饭局」，官方主导动作集中在<b>开场亮灯、荣誉颁奖、全员合影</b>，其余交给现场自然流动</li>
+        <li>大部分时间留给玩家自由吃逛拍社交，<span class="hl">降低参与压力</span>，像一场朋友聚会而非演出</li>
+        <li>城市菜揭晓 / coser 上菜 / 米饭整活三块尽量 <b>玩家共创（PUGC）</b>，官方搭台、玩家唱戏</li>
+        <li><b>coser = 玩家也是 NPC</b>：从报名玩家中挑选，担任跑堂/掌勺/任务发布，营造游乐园 NPC 的沉浸感</li>
+        <li>到场米饭<b>提前报名 → 筛选 → 核销入场</b>，兼顾成本、人数与现场活跃度</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>核心装置：巨型 Logo 灯箱透明装置</h3>
+      <p class="lead">深圳终点站用一座<b>巨型米饭联盟 Logo 灯箱透明装置</b>承接全国聚米。各城讨来的假米汇入填满后<b>背光亮灯、宣布开席</b>，亮起的 Logo 是全场视觉中心，也是当晚主要传播画面与吃饭大会的仪式核心。</p>
+    </div>
+
+    <div class="card">
+      <h3>吃席名单 · 报名 + 抽签筛选逻辑（控制在 100–200 席）</h3>
+      <div class="capbar">
+        <div><div class="big">100–200</div><div style="font-size:12px">现场吃席名额（控成本/控人数/保活跃）</div></div>
+        <div style="font-size:13px;line-height:1.6">所有人<b>统一报名</b>，名单分两层产生：<b>少量功能角色优先锁席</b> + <b>其余全部进抽签池</b>（池内按贡献度加权）。<span class="hl">持票也要抽签，不直接到场。</span></div>
+      </div>
+
+      <div style="font-weight:700;color:var(--rice-deep);margin:6px 0 8px">第一层 · 优先锁席（功能角色，名额可控）</div>
+      <div class="tiers">
+        <div class="tier t1"><div class="rk">1</div><div class="tb">
+          <div class="tt">深圳本地筛选上的玩家 coser（NPC 担当）</div>
+          <div class="tx">承担现场跑堂/掌勺/任务发布等 NPC 角色，是现场氛围与出片的关键——优先锁定席位</div></div>
+          <div class="seat">优先锁席</div></div>
+        <div class="tier t2"><div class="rk">2</div><div class="tb">
+          <div class="tt">舞台节目表演米饭</div>
+          <div class="tx">报名上台表演（唱跳/才艺/整活）并通过的玩家，为现场贡献内容与气氛——其次锁席</div></div>
+          <div class="seat">其次锁席</div></div>
+      </div>
+
+      <div style="font-weight:700;color:var(--rice-deep);margin:16px 0 8px">第二层 · 抽签池（锁席后的剩余名额，含持票米饭 + 米饭 coser）</div>
+      <div class="tiers">
+        <div class="tier t3"><div class="rk">3</div><div class="tb">
+          <div class="tt">米饭 coser（非 NPC 担当）</div>
+          <div class="tx">愿意 cos 出席、增强现场二次元浓度与出片量的玩家——<b>进抽签池</b>，享较高权重</div></div>
+          <div class="seat">抽签 + 加权</div></div>
+        <div class="tier t4"><div class="rk">4</div><div class="tb">
+          <div class="tt">全体报名米饭一起抽签（持票米饭加权）</div>
+          <div class="tx">锁席后的剩余名额，面向全体报名玩家<b>抽签产生</b>。参与过巡城、完成集米的<b>持票米饭享更高中签权重</b>，但仍需抽签、不直接入场，让没跑成巡城的玩家也保留机会</div></div>
+          <div class="seat">抽签 + 加权</div></div>
+      </div>
+
+      <div class="note" style="background:#FFF1E0;border-left-color:var(--rice-deep);color:#7A5418">
+        <b>对外措辞守住：</b>「米饭纪念票」首先是纪念周边，附带的是<b>抽签时的更高中签权重</b>，<span class="hl">不等于直接吃席资格、不承诺持票必到场</span>。最终名单以官方报名+抽签结果为准，规则与名额提前公示，避免「有票凭什么不让吃」的误解与舆情。
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>村晚流程</h3>
+      <p class="muted" style="margin-bottom:14px">
+        <span class="tl-dot" style="display:inline"><span class="badge off">官方</span></span> 官方主导环节　
+        <span class="tl-dot" style="display:inline"><span class="badge free">自由</span></span> 玩家自由 / 共创时段</p>
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-dot"><span class="badge free">自由</span></div>
+          <div class="tl-body"><div class="tt">0 · 入场暖场</div><div class="tx">核销入场、领物料、大电饭煲前自由拍照、找饭搭子</div></div></div>
+        <div class="tl-item"><div class="tl-dot"><span class="badge off">官方</span></div>
+          <div class="tl-body"><div class="tt">1 · 开场亮灯</div><div class="tx">大屏回顾各城讨饭集米与留言精选，巨型 Logo 灯箱填满假米后背光亮灯、宣布开席。亮灯是全场情绪的起点</div></div></div>
+        <div class="tl-item"><div class="tl-dot"><span class="badge free">自由</span></div>
+          <div class="tl-body"><div class="tt">2 · 自由开席 · 城市菜揭晓</div><div class="tx">12 城投票选出的菜陆续上桌，逐城揭晓「这座城选的是什么」。coser 以 NPC 身份上菜，玩家围观、点单、合影——把「我投的菜真上桌了」变成现场互动</div></div></div>
+        <div class="tl-item"><div class="tl-dot"><span class="badge free">自由</span></div>
+          <div class="tl-body"><div class="tt">3 · 米饭整活时段</div><div class="tx">开放小舞台 + NPC 任务点，玩家与 coser 自发整活：分部斗梗、显眼包擂台、饭搭子互认、cos 互动。官方提供场地与道具，内容由玩家共创</div></div></div>
+        <div class="tl-item"><div class="tl-dot"><span class="badge off">官方</span></div>
+          <div class="tl-body"><div class="tt">4 · 米饭荣耀榜颁奖</div><div class="tx">最佳分部 / 最佳饭搭子 / 年度显眼包等奖项，兼具荣誉感与玩梗趣味</div></div></div>
+        <div class="tl-item"><div class="tl-dot"><span class="badge off">官方</span></div>
+          <div class="tl-body"><div class="tt">5 · 全员开席合影</div><div class="tx">举碗 / 城市旗 / 米饭纪念票合影，发光大电饭煲作背景，定格全国米饭同框的画面</div></div></div>
+        <div class="tl-item"><div class="tl-dot"><span class="badge free">自由</span></div>
+          <div class="tl-body"><div class="tt">6 · 自由收尾</div><div class="tx">继续吃逛拍、互换联系方式、大电饭煲前补拍</div></div></div>
+      </div>
+      <div class="note">现场重点出片画面：<b>Logo 灯箱亮灯 · coser 传菜互动 · 全员合影</b>。</div>
+    </div>
+
+    <div class="card">
+      <h3>城市站与村晚的前后呼应</h3>
+      <table>
+        <tr><th>城市站埋下的钩子</th><th>村晚现场的兑现</th></tr>
+        <tr><td><span class="k">城市菜投票</span></td><td>投出的菜在村晚现场揭晓、上桌</td></tr>
+        <tr><td><span class="k">留言墙</span></td><td>各城留言汇成「全国留言墙」现场展示</td></tr>
+        <tr><td><span class="k">讨来的城市色假米</span></td><td>各城色米汇进巨型 Logo 灯箱，亮灯时 12 城同框</td></tr>
+        <tr><td><span class="k">米饭纪念票</span></td><td>合影与拍照位鼓励玩家亮出米饭纪念票</td></tr>
+      </table>
+      <p class="muted" style="margin-top:10px">玩家在自己城市做的小动作，<b>在深圳终点亲眼看到结果</b>，散点由此串成一条线。</p>
+    </div>
+  </section>
+
+  <!-- 04 传播 -->
+  <section>
+    <div class="sec-head"><div class="no">04</div>
+      <div><h2>传播宣发计划与引爆链路</h2><div class="en">AMPLIFY · 主投小红书 + 抖音</div></div></div>
+
+    <div class="card">
+      <h3>把散点讲成一个故事</h3>
+      <p class="lead">活动有很多小动作（加群、投票、留言、领米、村晚），需要统一翻译成玩家视角，让玩家一眼看懂自己在做什么。对外口径保持一致，只换平台、不换故事。</p>
+      <table>
+        <tr><th>活动动作</th><th>对玩家怎么说</th></tr>
+        <tr><td>加分部群</td><td>找到你这座城的米饭组织</td></tr>
+        <tr><td>城市菜投票</td><td>帮你的城市选一道菜，送去深圳开席</td></tr>
+        <tr><td>留言墙</td><td>在墙上留下你的名字，证明你来过</td></tr>
+        <tr><td>讨饭集米 / 电饭煲</td><td>端着电饭煲到处讨米，给你的城凑满一煲</td></tr>
+        <tr><td>巨型 Logo 灯箱亮灯</td><td>全国的米聚齐了，灯亮了，开饭</td></tr>
+        <tr><td>村晚 / 吃饭大会</td><td>全国米饭在深圳蹲一块儿吃同一顿饭</td></tr>
+      </table>
+      <div class="note">配套一张「全国讨饭聚米路线图」主视觉长图，贯穿全程：预热讲故事、过程更新进度、收官做对比。</div>
+    </div>
+
+    <div class="card">
+      <h3>传播两阶段 · 各设话题锚点，照着锚点去拍</h3>
+      <p class="lead">传播分两个阶段：阶段一是各城「讨饭集米 + 米饭神秘仪式」，阶段二是深圳终点站「吃饭大会」。每个阶段定几个有梗、有画面的话题 tag 当锚点，线下活动照着这些锚点去执行，确保拍到我们想要的画面，形成宣发素材。</p>
+      <div class="phases" style="grid-template-columns:repeat(2,1fr)">
+        <div class="ph"><span class="pn">阶段一</span><div class="pt">各城讨饭集米 + 围炉吃饭盒</div>
+          <div class="pd">巡回全程。靠「讨饭、围炉吃饭盒、城城互怼」制造连续的整活大戏，把分散城市站串成「全国米饭正在到处讨饭」的连载</div></div>
+        <div class="ph"><span class="pn">阶段二</span><div class="pt">深圳终点 · 吃饭大会</div>
+          <div class="pd">12/05 当晚。靠「Logo 灯箱亮灯、coser 传菜、地域菜大战、全员同框」集中引爆，第一时间出切片刷屏</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>主投平台与承接</h3>
+      <p class="lead">本次传播集中在小红书与抖音两个公域阵地，分部社群与天美小程序负责报名、通知与转化承接，不铺其他平台。</p>
+      <table>
+        <tr><th>平台 / 阵地</th><th>角色</th><th>内容重点</th></tr>
+        <tr><td><span class="k">抖音</span></td><td>引爆主阵地</td><td>短视频切片：端电饭煲讨饭、围炉吃饭盒、Logo 灯箱亮灯、coser 传菜、城城互怼，动作强、节奏快</td></tr>
+        <tr><td><span class="k">小红书</span></td><td>口碑种草</td><td>米饭纪念票晒图、城市站打卡、留言墙、村晚 repo，主打精致感与攻略感</td></tr>
+        <tr><td><span class="k">分部社群</span></td><td>报名 / 通知 / 转化</td><td>各城报名召集、活动通知、UGC 征集、玩家组织，长期沉淀阵地</td></tr>
+        <tr><td><span class="k">天美小程序</span></td><td>报名 / 转化入口</td><td>承接报名登记、信息查询与活动入口，打通到现场的转化链路</td></tr>
+      </table>
+    </div>
+
+    <div class="topic">
+      <div class="lb">传播总话题（提案 · 待定）</div>
+      <div class="tg">#米饭联盟全国讨饭进行时#</div>
+      <div class="ds">自嘲反差、不端着、好玩第一。备选：#全国米饭端着电饭煲在要饭# / #我的米饭联盟到底有多能吃#。一个总话题统领，两阶段所有分话题都往里回收。</div>
+    </div>
+
+    <div class="card" style="margin-top:18px">
+      <h3>阶段一锚点 · 各城讨饭集米 + 围炉吃饭盒</h3>
+      <p class="lead">巡回城市站不一城一话题。官号与各城分部号共用下面这几个 tag，谁到了都能发、城城还能互相玩起来。线下照着锚点去摆画面，拍到「端电饭煲讨饭 + 围炉吃饭盒」的素材。</p>
+      <div class="ideas">
+        <div class="idea">
+          <div class="ih"><span class="ist">锚点 1</span><span class="itag">#端着电饭煲在要饭#</span><span class="iph">巡回全程 · 主梗</span></div>
+          <ul class="clean">
+            <li>玩家端着小电饭煲满场（及周边商圈）讨米化缘，拍「一群人端着电饭煲一本正经要饭」的荒诞名场面</li>
+            <li>标题党：「在 XX 商圈偶遇一群端电饭煲要饭的，凑近一看人均二次元」「2026 年了，还有人靠讨饭凑齐一锅米」</li>
+          </ul>
+        </div>
+        <div class="idea">
+          <div class="ih"><span class="ist">锚点 2</span><span class="itag">#全国米饭蹲一块儿吃#</span><span class="iph">巡回全程 · 围炉</span></div>
+          <ul class="clean">
+            <li>大家围坐在大电饭煲前一起吃盒饭，主打「全国米饭蹲一块儿真吃饭」的真实感与团建感</li>
+            <li>标题党：「这顿饭蹲了 12 个城才凑齐」「一群二次元围着电饭煲吃盒饭，画面太抽象」</li>
+          </ul>
+        </div>
+        <div class="idea">
+          <div class="ih"><span class="ist">锚点 3</span><span class="itag">#全国米饭围着电饭煲蹲了#</span><span class="iph">巡回全程 · 真实感</span></div>
+          <ul class="clean">
+            <li>集米完成后大家围坐大电饭煲前一起吃饭盒，主打团建感与真实感，配城城方言喊「开饭咧 / 七饭咯 / 恰饭啦」</li>
+            <li><b>城城凡尔赛互怼</b>：各城晒自家电饭煲进度互相阴阳「就这？我们城一下午又满一煲」，官号下场拱火</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>阶段二锚点 · 深圳终点站「吃饭大会」</h3>
+      <p class="lead">深圳是重点战场，集中砸有反差、有梗、被验证过能火的几个锚点，抖音 + 小红书双发。</p>
+      <div class="ideas">
+
+        <div class="idea">
+          <div class="ih"><span class="ist">主爆点</span><span class="itag">coser 传菜吃席 · #这桌饭的服务员有点不对劲#</span><span class="iph">抖音 + 小红书</span></div>
+          <ul class="clean">
+            <li>coser 不站桩拍照，当<b>真·跑堂</b>：端着各城硬菜满场跑、吆喝、跟玩家贫嘴、被玩家点单使唤</li>
+            <li>反差名场面：仙气角色端着一盆酸菜炖大鹅 / 反派 boss 笑眯眯帮你添饭，越出戏越好</li>
+            <li>标题党：「点了份套餐，结果上菜的是我老婆」「二次元下凡当传菜员，我恍惚了」</li>
+          </ul>
+        </div>
+
+        <div class="idea">
+          <div class="ih"><span class="ist">话题点</span><span class="itag">地域菜大战 · #全国米饭把家底菜端来了#</span><span class="iph">投票期预热 → 终点引爆</span></div>
+          <ul class="clean">
+            <li>投票期就开撕：「川渝麻辣 vs 广式清淡 vs 东北硬菜」站队 battle，「凭什么 XX 菜代表我们城」吵起来就赢了</li>
+            <li>终点站 12 城菜真摆一桌，做<b>菜桌巡礼</b>视频：「这一桌饭，是全国米饭的家底」</li>
+            <li>标题党：「12 个城为了一盘菜吵了一个月」「这桌饭的含金量，懂的都懂」</li>
+          </ul>
+        </div>
+
+        <div class="idea">
+          <div class="ih"><span class="ist">仪式爆点</span><span class="itag">Logo 灯箱亮灯 · #全国的米终于凑满一锅#</span><span class="iph">当晚首发</span></div>
+          <ul class="clean">
+            <li>巨型 Logo 灯箱填满全国讨来的假米后背光亮灯、开席，做当晚首发画面：「全国讨了一路的米，今晚总算凑齐了」</li>
+            <li>标题党：「一群人端着电饭煲讨饭讨了一个月，就为了今晚这顿」「讨遍 12 城，终于把这口饭凑齐了」</li>
+          </ul>
+        </div>
+
+        <div class="idea">
+          <div class="ih"><span class="ist">收尾沉淀</span><span class="itag">留言城市色卡片 · #来自12城米饭的一句话#</span><span class="iph">收官期</span></div>
+          <ul class="clean">
+            <li>各城留言做成<b>城市色卡片合集</b>，终点站铺成一面色彩留言墙，玩家找自己那句打卡</li>
+            <li>收官做成可视化长图，呼应开篇路线图，给整件事一个有温度的结尾</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="note">优先级：coser 传菜（验证过的爆款）＞ Logo 灯箱亮灯（仪式高光）＞ 地域菜大战（话题度）＞ 留言卡片（收尾沉淀）。</div>
+    </div>
+
+    <div class="card">
+      <h3>公关 / 自媒体稿 · 只做收尾总结</h3>
+      <p class="lead">不铺前置多篇通稿，集中在活动收尾发一篇总结性内容，目标是让行业内人士与路人玩家都能快速看懂这件事的全貌与价值。</p>
+      <ul class="clean">
+        <li><b>讲清楚一件事</b>：米饭联盟用一场「全国聚米 → 深圳开席」，把分散在 12 城的玩家组织成了一件可见的大事</li>
+        <li><b>给得出画面与数据</b>：讨饭路线图、Logo 灯箱亮灯、吃饭大会现场，配真实的城市数 / 到场 / 留言数据</li>
+        <li><b>留有人味的故事</b>：穿插一两个玩家/分部长的参与故事，让路人也能共情</li>
+        <li><b>面向两类读者</b>：行业人士看到「玩家社群组织力」，路人玩家看到「原来这么好玩、还能参与」</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>合规提示（广告法红线）</h3>
+      <ul class="clean">
+        <li>全程规避极限词，不用「最/第一/国家级/唯一/顶级」等</li>
+        <li>数据只用真实可核的数字（到场/留言/城市数），不编造、不夸大转化</li>
+        <li>玩家信息收集（报名/进群）遵循个人信息保护要求，明确用途</li>
+        <li>物证措辞守住：米饭纪念票是<b>纪念周边</b>，不暗示官方认证或特权</li>
+        <li><b>米饭纪念票措辞守住：它是纪念票 + 抽签更高权重，不承诺「持票必到场」</b>，吃席名单以官方报名抽签与名额为准，规则提前公示，防误解舆情</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 待确认清单已按需隐藏 -->
+
+  <footer>
+    米饭联盟「全城巡游集米 + 村晚」落地方案 · 内部脑暴讨论稿　|　本地 HTML 版　|　欢迎直接拍砖、标注
+  </footer>
+</div>
+</body>
+</html>
