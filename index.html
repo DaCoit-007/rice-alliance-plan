@@ -143,6 +143,17 @@
   .note{background:#FCEEEA;border-left:4px solid var(--red);border-radius:8px;padding:12px 16px;
     font-size:13.5px;color:#8a3328;margin-top:12px}
 
+  /* 实拍参考图网格 */
+  .imgs{display:grid;gap:10px;margin-top:14px}
+  .imgs.g2{grid-template-columns:repeat(2,1fr)}
+  .imgs.g3{grid-template-columns:repeat(3,1fr)}
+  .imgs .ph{position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#f3ede2;aspect-ratio:4/3}
+  .imgs .ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .imgs .cap{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,0,0,.62));
+    color:#fff;font-size:12px;padding:14px 10px 7px;line-height:1.3}
+  .imgcap{font-size:12px;color:#9a8a72;margin-top:6px}
+  @media(max-width:560px){.imgs.g3,.imgs.g2{grid-template-columns:repeat(2,1fr)}}
+
   /* 筛选优先级 */
   .tiers{display:flex;flex-direction:column;gap:10px}
   .tier{display:flex;align-items:flex-start;gap:14px;border:1px solid var(--line);border-radius:12px;
@@ -313,6 +324,20 @@
         <li><b>米饭神秘仪式</b>：即<b>围炉吃饭盒</b>——集米完成后，大家围坐在大电饭煲前一起吃饭盒，主打「全国米饭蹲一块儿真吃饭」的真实感与团建感。仪式感来自「真的一起蹲着吃」这件事本身</li>
       </ul>
       <div class="note">神秘仪式 = 围炉吃饭，不做额外的伪仪式包装（念米经/添米礼/暗号等），避免复杂化，让「蹲着吃盒饭」这件事本身就是梗与画面。</div>
+
+      <div style="font-weight:700;color:var(--rice-deep);margin:18px 0 4px">画面参考 · 讨饭集米（cos 角色街头讨饭，自带反差与传播力）</div>
+      <div class="imgs g3">
+        <div class="ph"><img src="images/real/tour-02.jpg" alt="讨饭参考"><div class="cap">cos 角色坐地摆摊「讨饭」，路人围观出片</div></div>
+        <div class="ph"><img src="images/real/tour-04.jpg" alt="讨饭参考"><div class="cap">蹲地讨饭名场面，反差感强</div></div>
+        <div class="ph"><img src="images/real/tour-05.jpg" alt="讨饭参考"><div class="cap">银时乞讨梗，二次元玩家自发玩起来</div></div>
+        <div class="ph"><img src="images/real/tour-06.jpg" alt="讨饭参考"><div class="cap">商圈 cos 讨饭，引来大批路人围观拍摄</div></div>
+      </div>
+      <div style="font-weight:700;color:var(--rice-deep);margin:16px 0 4px">画面参考 · 围炉吃饭盒（cos 搭子蹲一块儿吃盒饭，烟火气+团建感）</div>
+      <div class="imgs g2">
+        <div class="ph"><img src="images/real/tour-01.jpg" alt="吃饭盒参考"><div class="cap">街头蹲坐吃盒饭，cos 装扮反差感</div></div>
+        <div class="ph"><img src="images/real/tour-03.jpg" alt="吃饭盒参考"><div class="cap">cos 搭子围坐一起吃便当，真实又出片</div></div>
+      </div>
+      <div class="imgcap">※ 以上为网络实拍参考图，仅用于方案内部说明画面调性，对外发布需另行确认版权。</div>
     </div>
   </section>
 
@@ -330,6 +355,12 @@
         <li><b>coser = 玩家也是 NPC</b>：从报名玩家中挑选，担任跑堂/掌勺/任务发布，营造游乐园 NPC 的沉浸感</li>
         <li>到场米饭<b>提前报名 → 筛选 → 核销入场</b>，兼顾成本、人数与现场活跃度</li>
       </ul>
+      <div style="font-weight:700;color:var(--rice-deep);margin:14px 0 4px">画面参考 · 漫展团建饭局（满桌硬菜 + coser 跑堂，正是我们要的现场感）</div>
+      <div class="imgs g2">
+        <div class="ph"><img src="images/real/banquet-01.jpg" alt="吃饭大会参考"><div class="cap">漫展现场摆开大圆桌，cos 玩家围坐吃满桌硬菜，热闹团圆</div></div>
+        <div class="ph"><img src="images/real/banquet-02.jpg" alt="吃饭大会参考"><div class="cap">cos 玩家自己铺桌、布置场地，「桌子是XX铺的、场地是XX拖的」自带梗</div></div>
+      </div>
+      <div class="imgcap">※ 以上为网络实拍参考图，仅用于方案内部说明画面调性，对外发布需另行确认版权。</div>
     </div>
 
     <div class="card">
@@ -456,7 +487,6 @@
     <div class="topic">
       <div class="lb">传播总话题（提案 · 待定）</div>
       <div class="tg">#米饭联盟全国讨饭进行时#</div>
-      <div class="ds">自嘲反差、不端着、好玩第一。备选：#全国米饭端着电饭煲在要饭# / #我的米饭联盟到底有多能吃#。一个总话题统领，两阶段所有分话题都往里回收。</div>
     </div>
 
     <div class="card" style="margin-top:18px">
@@ -480,9 +510,9 @@
           </ul>
         </div>
         <div class="idea">
-          <div class="ih"><span class="ist">锚点 3</span><span class="itag">#蹭吃timi的米饭#</span><span class="iph">巡回全程 · 归属梗</span></div>
+          <div class="ih"><span class="ist">锚点 3</span><span class="itag">#蹭吃timi的米饭#</span><span class="itag">#天美讨饭吃#</span><span class="itag">#在漫展讨饭#</span><span class="iph">巡回全程 · 归属梗</span></div>
           <ul class="clean">
-            <li>双关玩梗：「timi」是天美玩家的自家昵称，「蹭吃 timi 的米饭」既呼应「讨饭集米」的主线动作，又把品牌归属感悄悄植入——蹭的是自家人的饭，亲切不违和</li>
+            <li>双关玩梗：「timi」是天美玩家的自家昵称，「蹭吃 timi 的米饭」既呼应「讨饭集米」的主线动作，又把品牌归属感悄悄植入——蹭的是自家人的饭，亲切不违和；配套 <b>#天美讨饭吃# / #在漫展讨饭#</b> 两个并列 tag 一起带，覆盖不同搜索习惯</li>
             <li>玩家互相「蹭饭」：你讨我一勺、我蹭你一口，把蹭饭做成 timi 之间的社交暗号，越蹭越熟、越蹭越有梗</li>
             <li>标题党：「今天又去蹭了顿 timi 的米饭」「作为 timi，蹭自家的饭天经地义」「在漫展蹭吃 timi 的米饭，一勺一勺把全国的饭凑齐了」</li>
           </ul>
@@ -491,76 +521,17 @@
     </div>
 
     <div class="card">
-      <h3>阶段一 · 备选话题池（待 DC 挑选）</h3>
-      <p class="lead">下面按「场景 / 反差 / UGC / 互动」几个方向多列一批话题方向，你挑出喜欢的，我再深化成完整锚点。</p>
+      <h3>阶段一锚点 4 · 围炉吃饭盒</h3>
       <div class="ideas">
-
         <div class="idea">
-          <div class="ih"><span class="ist">场景向</span><span class="itag">#这勺米我蹭定了#</span><span class="iph">巡回 · 蹭饭文化</span></div>
-          <ul class="clean">
-            <li>主打二次元「蹭饭/搭子」文化，玩家互相讨米、拼桌、认饭搭子，把「蹭」玩成社交货币</li>
-            <li>标题党：「漫展上最社牛的玩法：挨个蹭一勺米」「认识新朋友的方式，是问他讨一勺饭」</li>
-          </ul>
-        </div>
-
-        <div class="idea">
-          <div class="ih"><span class="ist">场景向</span><span class="itag">#全国米饭蹲一块儿吃#</span><span class="iph">巡回 · 围炉</span></div>
+          <div class="ih"><span class="ist">锚点 4</span><span class="itag">#全国米饭蹲一块儿吃#</span><span class="iph">巡回全程 · 围炉</span></div>
           <ul class="clean">
             <li>围炉吃饭盒的真实团建感：一群陌生人因为一锅饭蹲到一块，主打「素不相识却一起吃了顿饭」的温度</li>
+            <li>集米完成后大家围坐大电饭煲前一起吃饭盒，配城城方言喊「开饭咧 / 七饭咯 / 恰饭啦」，烟火气拉满</li>
             <li>标题党：「这顿饭蹲了 12 个城才凑齐」「一群二次元围着电饭煲蹲着吃饭，画面太上头」</li>
           </ul>
         </div>
-
-        <div class="idea">
-          <div class="ih"><span class="ist">反差向</span><span class="itag">#二次元的尽头是讨饭#</span><span class="iph">巡回 · 自嘲</span></div>
-          <ul class="clean">
-            <li>自嘲反差：精致 cos 妆造 + 端着电饭煲讨饭的土味行为，越精致越好笑</li>
-            <li>标题党：「花三千块做的妆，端着电饭煲要了一下午饭」「神仙打架的现场，怎么在抢一勺米」</li>
-          </ul>
-        </div>
-
-        <div class="idea">
-          <div class="ih"><span class="ist">反差向</span><span class="itag">#我加了个正经组织但都在干离谱事#</span><span class="iph">巡回 · 身份梗</span></div>
-          <ul class="clean">
-            <li>用「正经组织 vs 离谱行为」的反差立人设：名字很正经（米饭联盟），干的全是端电饭煲讨饭这种事</li>
-            <li>标题党：「入会第一天，组织让我去讨饭」「这组织听着挺唬人，进来发现都在蹭饭」</li>
-          </ul>
-        </div>
-
-        <div class="idea">
-          <div class="ih"><span class="ist">UGC 向</span><span class="itag">#晒出你的讨饭名场面#</span><span class="iph">巡回 · UGC 征集</span></div>
-          <ul class="clean">
-            <li>征集玩家自己的讨饭/蹭饭名场面：最社牛的讨米、最离谱的搭讪、最暖心的一勺，官号挑出来上墙</li>
-            <li>标题党：「你讨饭的样子，比 cos 还出片」「评论区都是讨饭高手，我自愧不如」</li>
-          </ul>
-        </div>
-
-        <div class="idea">
-          <div class="ih"><span class="ist">UGC 向</span><span class="itag">#我的电饭煲今天没装饭#</span><span class="iph">巡回 · 道具整活</span></div>
-          <ul class="clean">
-            <li>玩家晒电饭煲的离谱用法（当包/当头盔/装周边/装手机），把道具玩成创意载体</li>
-            <li>标题党：「电饭煲：我以为我是来煮饭的」「这届米饭的电饭煲，比脑洞还大」</li>
-          </ul>
-        </div>
-
-        <div class="idea">
-          <div class="ih"><span class="ist">互动向</span><span class="itag">#城城互相讨饭#</span><span class="iph">巡回 · 城市 PK</span></div>
-          <ul class="clean">
-            <li>各城分部号互相「跨城讨米」「阴阳对方城的米不够吃」，官号下场拱火，城城互怼出梗</li>
-            <li>标题党：「我们城的米，凭什么分你一勺」「全国分部为了一锅饭开始内讧了」</li>
-          </ul>
-        </div>
-
-        <div class="idea">
-          <div class="ih"><span class="ist">互动向</span><span class="itag">#讨到了来自XX城的一勺米#</span><span class="iph">巡回 · 集邮打卡</span></div>
-          <ul class="clean">
-            <li>把「集米」做成集邮式打卡：每讨到一座城的米就打一个卡，集齐全国「米地图」，激发收集欲</li>
-            <li>标题党：「我的电饭煲里，已经有 8 个城的米了」「为了集齐全国的米，我跑了三个城」</li>
-          </ul>
-        </div>
-
       </div>
-      <div class="note">这些是<b>方向草稿</b>，你勾选喜欢的（可多选），我再把选中的扩写成和锚点 1/2 一样的完整可执行版本。</div>
     </div>
 
     <div class="card">
