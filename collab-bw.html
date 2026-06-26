@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>米饭联盟 · 全城巡游集米 | 外部项目协作沟通稿</title>
+<title>米饭联盟 · 集米内容（BW 精简版）</title>
 <style>
   :root{
     --rice:#F6B042; --rice-deep:#E8941A; --red:#D94A3D;
@@ -15,7 +15,6 @@
   body{font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",sans-serif;
     background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
   .wrap{max-width:980px;margin:0 auto;padding:0 20px 80px}
-
   .hero{background:linear-gradient(135deg,#FFE9C2 0%,#FFD590 45%,#F6B042 100%);
     border-radius:0 0 32px 32px;padding:54px 36px 46px;position:relative;overflow:hidden;box-shadow:var(--shadow)}
   .hero::after{content:"";position:absolute;right:-40px;bottom:-40px;width:220px;height:220px;
@@ -23,24 +22,18 @@
   .hero .tag{display:inline-block;background:rgba(217,74,61,.92);color:#fff;font-size:13px;
     padding:5px 14px;border-radius:20px;letter-spacing:.5px;margin-bottom:18px;font-weight:600}
   .hero h1{font-size:32px;line-height:1.3;color:#5A3A0E;margin-bottom:14px;font-weight:800}
-  .hero .sub{font-size:15px;color:#7A5418;max-width:680px}
   .hero .meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
   .hero .meta span{background:rgba(255,255,255,.65);color:#6A4810;font-size:13px;padding:6px 14px;border-radius:18px;font-weight:600}
-
-  .mainline{margin:32px 0;background:var(--ink);color:#FFE9C2;border-radius:18px;
-    padding:26px 30px;text-align:center;box-shadow:var(--shadow)}
+  .mainline{margin:32px 0;background:var(--ink);color:#FFE9C2;border-radius:18px;padding:26px 30px;text-align:center;box-shadow:var(--shadow)}
   .mainline .lbl{font-size:12px;color:var(--rice);letter-spacing:3px;margin-bottom:10px}
   .mainline .txt{font-size:21px;font-weight:800;line-height:1.5;letter-spacing:.5px}
   .mainline .txt b{color:var(--rice)}
-
   section{margin-top:46px}
   .sec-head{display:flex;align-items:center;gap:12px;margin-bottom:22px}
   .sec-head .no{width:34px;height:34px;border-radius:10px;background:var(--rice);color:#fff;
-    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex:none;
-    box-shadow:0 3px 8px rgba(230,148,26,.35)}
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex:none;box-shadow:0 3px 8px rgba(230,148,26,.35)}
   .sec-head h2{font-size:23px;font-weight:800;color:var(--ink)}
   .sec-head .en{font-size:12px;color:var(--ink2);margin-top:2px;letter-spacing:1px}
-
   .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 26px;box-shadow:var(--shadow);margin-bottom:18px}
   .card h3{font-size:17px;color:var(--rice-deep);margin-bottom:12px;font-weight:700;display:flex;align-items:center;gap:8px}
   .card h3::before{content:"";width:6px;height:18px;background:var(--rice);border-radius:3px;display:inline-block}
@@ -50,20 +43,15 @@
   ul.clean li::before{content:"●";color:var(--rice);position:absolute;left:4px;font-size:11px;top:9px}
   .hl{color:var(--red);font-weight:700}
   .muted{color:var(--ink2);font-size:14px}
-
   .chain{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:8px}
   .chain .node{background:#FFF;border:1px solid var(--rice);color:var(--rice-deep);border-radius:10px;padding:8px 12px;font-size:13px;font-weight:700}
   .chain .ar{color:var(--rice-deep);font-weight:800}
-
-  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .grid3{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
   .mini{background:#FFFCF5;border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center}
   .mini .ic{font-size:28px;margin-bottom:8px}
   .mini .mt{font-weight:800;color:var(--ink);margin-bottom:6px;font-size:15px}
   .mini .md{font-size:13px;color:var(--ink2)}
-
   .note{background:#FCEEEA;border-left:4px solid var(--red);border-radius:8px;padding:12px 16px;font-size:13.5px;color:#8a3328;margin-top:12px}
-
-  /* RD 拍摄流程步骤 */
   .rd{display:flex;flex-direction:column;gap:14px}
   .rd-step{display:flex;gap:16px;border:1px solid var(--line);border-radius:14px;padding:18px 20px;background:#FFFCF5;position:relative}
   .rd-step .sn{width:40px;height:40px;border-radius:11px;background:linear-gradient(135deg,#F6B042,#E8941A);
@@ -71,10 +59,7 @@
   .rd-step .rb{flex:1}
   .rd-step .rt{font-weight:800;color:var(--ink);font-size:15.5px;margin-bottom:4px}
   .rd-step .rx{font-size:13.5px;color:var(--ink2);line-height:1.65}
-  .rd-step .rtag{display:inline-block;font-size:12px;font-weight:700;color:var(--red);background:#FCEEEA;
-    padding:2px 9px;border-radius:10px;margin-top:6px;margin-right:6px}
-
-  /* 分镜脚本 */
+  .rd-step .rtag{display:inline-block;font-size:12px;font-weight:700;color:var(--red);background:#FCEEEA;padding:2px 9px;border-radius:10px;margin-top:6px;margin-right:6px}
   .script{border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:6px}
   .script .sh{background:linear-gradient(135deg,#D94A3D,#B83A2E);color:#fff;padding:14px 18px}
   .script .sh .st{font-weight:800;font-size:16px}
@@ -83,13 +68,10 @@
   .shots{padding:6px 0}
   .shot{display:flex;gap:14px;padding:13px 18px;border-bottom:1px solid var(--line)}
   .shot:last-child{border-bottom:none}
-  .shot .num{width:26px;height:26px;border-radius:8px;background:var(--rice);color:#fff;font-weight:800;font-size:13px;
-    flex:none;display:flex;align-items:center;justify-content:center;margin-top:2px}
+  .shot .num{width:26px;height:26px;border-radius:8px;background:var(--rice);color:#fff;font-weight:800;font-size:13px;flex:none;display:flex;align-items:center;justify-content:center;margin-top:2px}
   .shot .sb{flex:1}
   .shot .pic{font-weight:700;color:var(--ink);font-size:14px;margin-bottom:3px}
   .shot .desc{font-size:13px;color:var(--ink2);line-height:1.6}
-
-  /* 需求卡 */
   .needs{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
   .need{border:1px solid var(--line);border-radius:14px;padding:18px 20px;background:#FFFCF5;position:relative}
   .need .nn{position:absolute;top:14px;right:16px;font-size:30px;font-weight:800;color:#F2D8AE;line-height:1}
@@ -97,36 +79,30 @@
   .need .nx{font-size:13.5px;color:var(--ink2);line-height:1.65}
   .need .must{display:inline-block;font-size:11px;font-weight:700;color:#fff;background:var(--red);padding:2px 9px;border-radius:10px;margin-top:8px}
   .need .nice{display:inline-block;font-size:11px;font-weight:700;color:var(--green);background:#E6F0E6;border:1px solid #BFD9BF;padding:2px 9px;border-radius:10px;margin-top:8px}
-
-  .imgs{display:grid;gap:10px;margin-top:14px}
-  .imgs.g2{grid-template-columns:repeat(2,1fr)}
-  .imgs.g3{grid-template-columns:repeat(3,1fr)}
+  .imgs{display:grid;gap:10px;margin-top:14px;grid-template-columns:repeat(2,1fr)}
   .imgs .ph{position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#f3ede2;aspect-ratio:4/3}
   .imgs .ph img{width:100%;height:100%;object-fit:cover;display:block}
   .imgs .cap{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,0,0,.62));color:#fff;font-size:12px;padding:14px 10px 7px;line-height:1.3}
   .imgcap{font-size:12px;color:#9a8a72;margin-top:6px}
-
-  .cities{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-  .cities span{background:#FFF;border:1px solid var(--line);border-radius:20px;padding:5px 13px;font-size:13px;color:var(--ink);font-weight:600}
-  .cities span.fin{background:var(--red);color:#fff;border-color:var(--red)}
-
+  .ideas{display:flex;flex-direction:column;gap:14px}
+  .idea{border:1px solid var(--line);border-radius:14px;padding:18px 20px;background:#FFFCF5}
+  .idea .ih{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+  .idea .ist{font-size:12px;font-weight:700;color:#fff;background:var(--rice-deep);padding:3px 10px;border-radius:12px;flex:none}
+  .idea .itag{font-size:16px;font-weight:800;color:var(--red)}
+  .idea ul.clean li{padding:4px 0 4px 22px;font-size:14px}
+  .idea ul.clean li::before{top:8px}
   footer{text-align:center;color:var(--ink2);font-size:13px;margin-top:50px;padding-top:24px;border-top:1px solid var(--line)}
-
-  @media(max-width:680px){
-    .grid3,.needs{grid-template-columns:1fr}
-    .hero h1{font-size:25px}.mainline .txt{font-size:17px}
-    .imgs.g3,.imgs.g2{grid-template-columns:repeat(2,1fr)}
-  }
+  @media(max-width:680px){.grid3,.needs,.imgs{grid-template-columns:1fr}.hero h1{font-size:25px}.mainline .txt{font-size:17px}}
 </style>
 </head>
 <body>
 
 <div class="hero">
-  <span class="tag">对外协作沟通稿 · 致各线下活动项目组</span>
-  <h1>米饭联盟「全城巡游集米」</h1>
+  <span class="tag">致 BW 项目组 · 轻量协作版</span>
+  <h1>米饭联盟「集米」内容<br>BW 现场轻量落地</h1>
   <div class="meta">
-    <span>🏙 全国 12 城巡游</span>
-    <span>🍚 轻量摊位 + 互动内容</span>
+    <span>🚶 无摊位 · 流动小队</span>
+    <span>🍚 集米讨米 + 围炉吃饭</span>
     <span>🎯 收官于天美周年庆深圳站</span>
   </div>
 </div>
@@ -135,86 +111,72 @@
 
   <div class="mainline">
     <div class="lbl">一句话讲清楚</div>
-    <div class="txt">在你的线下活动里，<b>给米饭联盟一个小摊位</b>，玩家端着电饭煲讨米、围炉吃饭，<b>产出有梗的传播内容</b>，全国攒到一起，深圳收官。</div>
+    <div class="txt">不占摊位、不抢主场，<b>小云仔 + 米饭 coser 流动小队</b>在 BW 现场<b>集米、围炉吃饭</b>，产出有梗的内容，全国攒到一起、深圳收官。</div>
   </div>
 
   <!-- 01 背景 -->
   <section>
     <div class="sec-head"><div class="no">01</div>
-      <div><h2>这是什么活动</h2><div class="en">BACKGROUND · 给项目同事的背景介绍</div></div></div>
+      <div><h2>这是什么 · 为什么轻</h2><div class="en">BACKGROUND</div></div></div>
 
     <div class="card">
-      <h3>一个轻量、不抢戏的「现场互动 + 内容」企划</h3>
-      <p class="lead">米饭联盟是天美的玩家社群组织。这次我们想借各地线下活动的现场，落地一套统一的「集米」互动：米饭 coser 端着电饭煲到处「讨米」、围着电饭煲吃饭，趣味、好拍、易参与，给活动现场添个有梗的打卡点，也帮我们产出一波传播素材。</p>
+      <h3>一支流动小队，不占摊位、不抢主场</h3>
+      <p class="lead">米饭联盟是天美的玩家社群组织。考虑到 BW 现场无摊位条件，我们把内容压到最轻：<b>不要点位、不摆装置</b>，只派一支「小云仔 + 米饭 coser」流动小队，在现场走动着<b>集米、围炉吃饭</b>，趣味、好拍、不打扰主场。</p>
+      <ul class="clean">
+        <li><b>对 BW</b>：现场多一组有梗、能出片的流动互动，零占地、零负担</li>
+        <li><b>对我们</b>：产出「全国米饭到处集米」的传播内容，攒进全国大盘</li>
+      </ul>
     </div>
 
     <div class="card">
-      <h3>现场普通玩家会怎么玩（3 步，全程 ≤ 5 分钟）</h3>
+      <h3>现场怎么玩（2 个动作）</h3>
       <div class="chain">
-        <span class="node">① 摊位签到</span><span class="ar">→</span>
-        <span class="node">② 端电饭煲集米讨米</span><span class="ar">→</span>
-        <span class="node">③ 围炉吃饭盒 + 领周边</span>
+        <span class="node">① 流动集米讨米</span><span class="ar">→</span>
+        <span class="node">② 围炉吃饭盒（最新神秘仪式）</span>
       </div>
-      <p class="muted" style="margin-top:12px">不排队、不淘汰、不卡门槛，进场顺手就能玩。</p>
       <div class="grid3" style="margin-top:14px">
-        <div class="mini"><div class="ic">🎫</div><div class="mt">摊位签到</div>
-          <div class="md">签到 + 投票特色菜，领<b>假米 + 米饭纪念票 + 普发周边</b></div></div>
-        <div class="mini"><div class="ic">🍚</div><div class="mt">集米讨米</div>
-          <div class="md">端着电饭煲找玩家 / 路人 / 工作人员 <b>讨一勺</b>，凑满一煲</div></div>
+        <div class="mini"><div class="ic">🍚</div><div class="mt">流动集米讨米</div>
+          <div class="md">小云仔端电饭煲、coser 随行，在现场走动着找玩家 / 路人 <b>讨一勺</b>，凑满一煲</div></div>
         <div class="mini"><div class="ic">🥢</div><div class="mt">围炉吃饭盒</div>
-          <div class="md">围坐大电饭煲前一起吃盒饭，主打「蹲一块儿真吃饭」</div></div>
+          <div class="md">找块空地围着电饭煲蹲坐，一起吃盒饭，主打「蹲一块儿真吃饭」的反差与烟火气</div></div>
       </div>
     </div>
 
     <div class="card">
       <h3>全国巡游 · 收官于天美周年庆深圳站</h3>
-      <p class="lead">各城讨来的米，最终都会<b>汇聚到天美周年庆深圳站</b>：12 城代表色的米倒进现场的米饭联盟巨型 Logo 灯箱装置，填满后亮灯、宣布开席，全国米饭在深圳「吃同一顿饭」，作为整件事的收官与高光画面。</p>
-      <div class="cities">
-        <span>北京</span><span>上海</span><span>广州</span><span class="fin">深圳·周年庆收官</span>
-        <span>厦门</span><span>重庆</span><span>成都</span><span>青岛</span>
-        <span>郑州</span><span>南阳</span><span>潍坊</span><span>杭州</span>
-      </div>
-      <p class="muted" style="margin-top:12px">深圳站的详细落地另有方案，本稿不展开。各位项目同事只需关注：在你的城市站，把「集米讨米」这个动作落地、拍好即可。</p>
+      <p class="lead">各场讨来的米，最终都会<b>汇聚到天美周年庆深圳站</b>：全国的米凑满一锅，开一场米饭联盟村晚，大家一起吃顿饭。深圳站详细落地另有方案，本稿不展开。</p>
     </div>
   </section>
 
   <!-- 02 现场 RD -->
   <section>
     <div class="sec-head"><div class="no">02</div>
-      <div><h2>现场执行 RD · 我们要拍的内容</h2><div class="en">ON-SITE · 三步走，照着拍即可</div></div></div>
+      <div><h2>现场执行 RD · 我们要拍的内容</h2><div class="en">ON-SITE · 两步走</div></div></div>
 
     <div class="card">
-      <p class="lead">每个城市站现场，围绕「集米」分三步执行与拍摄。时间不强求精确，按现场节奏走，核心是把这三段画面拍到、拍好。</p>
+      <p class="lead">BW 现场围绕「集米」分两步执行与拍摄，全程流动、不固定点位，核心是把这两段画面拍到、拍好。</p>
       <div class="rd">
         <div class="rd-step">
           <div class="sn">1</div>
           <div class="rb">
-            <div class="rt">米饭摊位签到 · 投票特色菜 + 领物料</div>
-            <div class="rx">玩家到摊位签到 + 投票本城特色菜，领取<b>假米 + 米饭纪念票 + 普发周边</b>。拍摄玩家签到、投票、领物料、举纪念票打卡的素材，建立「米饭联盟来了」的现场感。</div>
-            <span class="rtag">画面：摊位打卡 / 投票互动 / 纪念票特写</span>
+            <div class="rt">流动集米讨米 · 小云仔领队、coser 辅助</div>
+            <div class="rx">小云仔端着电饭煲领头、米饭 coser 在旁辅助，在现场走动着向玩家、路人、工作人员「讨一勺」，边讨边互动，凑满一煲。这是出梗、有传播力的核心环节，重点拍。</div>
+            <span class="rtag">画面：端煲集米讨米 / 路人围观 / 现场互动</span>
           </div>
         </div>
         <div class="rd-step">
           <div class="sn">2</div>
           <div class="rb">
-            <div class="rt">巡回讨米饭 · 米饭 coser 带队现场集米</div>
-            <div class="rx">米饭 coser 作为主体入镜，带着电饭煲向现场的米饭成员、其他玩家、工作人员甚至路人「讨一勺米」，边讨边互动，凑满一煲倒进本城大电饭煲。这是出梗、有传播力的核心环节，重点拍。</div>
-            <span class="rtag">画面：端煲集米讨米 / 路人围观 / 现场互动</span>
-          </div>
-        </div>
-        <div class="rd-step">
-          <div class="sn">3</div>
-          <div class="rb">
-            <div class="rt">围炉吃盒饭 · 米饭最新版神秘仪式进行 + 拍摄</div>
-            <div class="rx">集米完成后，米饭 coser 们围坐在大电饭煲前一起吃盒饭，把「全国米饭蹲一块儿真吃饭」的围炉仪式拍下来，主打真实、烟火气、团建感。</div>
-            <span class="rtag">画面：围炉蹲坐 / 一起开饭 / 烟火气全景</span>
+            <div class="rt">围炉吃盒饭 · 米饭最新版神秘仪式</div>
+            <div class="rx">找块空地，小云仔跟大电饭煲一起杵在中间「放饭」，米饭 coser 们围坐一圈吃盒饭，把「全国米饭蹲一块儿真吃饭」的围炉仪式拍下来，主打真实、反差、烟火气。</div>
+            <span class="rtag">画面：围炉蹲坐 / 小云仔放饭 / 烟火气全景</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 03 分镜脚本 -->
+  <!-- 03 脚本 -->
   <section>
     <div class="sec-head"><div class="no">03</div>
       <div><h2>简易画面感脚本</h2><div class="en">SHOT GUIDE · 集米讨米 & 围炉两段</div></div></div>
@@ -234,20 +196,20 @@
         <div class="shots">
           <div class="shot"><div class="num">1</div><div class="sb">
             <div class="pic">开场 · 小云仔端煲出场</div>
-            <div class="desc">由<b>小云仔（天美头套真人吉祥物）</b>端着小电饭煲领头，米饭 coser 在旁辅助一起集米讨米，一本正经地在现场穿行。镜头从电饭煲特写拉到小云仔 + coser，制造「这帮人端着电饭煲要干啥」的悬念。</div></div></div>
+            <div class="desc">由小云仔（天美头套真人吉祥物）端着小电饭煲领头，米饭 coser 在旁辅助一起集米讨米，一本正经地在现场穿行，制造「这帮人端着电饭煲要干啥」的悬念。</div></div></div>
           <div class="shot"><div class="num">2</div><div class="sb">
             <div class="pic">主体 · 小云仔端煲、coser 挨个讨</div>
-            <div class="desc">小云仔端着煲，coser 在旁挨个上前「讨点东西」：找玩家、找工作人员、找路人。<b>什么都能往煲里放</b>——签到送的假米、随手的小物、吃的喝的，越杂越有「要饭感」，双方互动贫嘴，越认真越好笑。</div></div></div>
+            <div class="desc">小云仔端着煲，coser 在旁挨个上前「讨点东西」：找玩家、找工作人员、找路人。<b>什么都能往煲里放</b>，越杂越有「要饭感」，双方互动贫嘴，越认真越好笑。</div></div></div>
           <div class="shot"><div class="num">3</div><div class="sb">
             <div class="pic">反应 · 路人围观</div>
             <div class="desc">抓拍路人「这是在干嘛」的好奇表情、围观、举手机拍。路人视角是天然的传播放大器。</div></div></div>
           <div class="shot"><div class="num">4</div><div class="sb">
             <div class="pic">收尾 · 凑满一煲</div>
-            <div class="desc">电饭煲渐渐被讨满，coser 举着满满一煲庆祝，倒进本城大电饭煲。配字「讨了一下午，终于凑满一煲」。</div></div></div>
+            <div class="desc">电饭煲渐渐被讨满，小云仔 / coser 举着满满一煲庆祝。配字「讨了一下午，终于凑满一煲」。</div></div></div>
         </div>
       </div>
       <div style="font-weight:700;color:var(--rice-deep);margin:16px 0 4px">画面参考</div>
-      <div class="imgs g2">
+      <div class="imgs">
         <div class="ph"><img src="images/real/tour-02.jpg" alt="集米讨米参考"><div class="cap">坐地摆摊讨米，路人围观</div></div>
         <div class="ph"><img src="images/real/tour-06.jpg" alt="集米讨米参考"><div class="cap">商圈 cos 讨米，大批围观</div></div>
       </div>
@@ -269,20 +231,20 @@
         <div class="shots">
           <div class="shot"><div class="num">1</div><div class="sb">
             <div class="pic">开场 · 围坐就位，小云仔坐镇中间</div>
-            <div class="desc"><b>小云仔跟大电饭煲一起杵在正中间</b>，一副「给大家放饭」的架势；一群米饭 coser 围着电饭煲蹲坐 / 围坐成一圈，精致妆造配蹲地吃饭，氛围像街头大排档，反差自带笑点。</div></div></div>
+            <div class="desc">小云仔跟大电饭煲一起杵在正中间，一副「给大家放饭」的架势；一群米饭 coser 围坐成一圈，精致妆造配蹲地吃饭，反差自带笑点。</div></div></div>
           <div class="shot"><div class="num">2</div><div class="sb">
             <div class="pic">主体 · 小云仔放饭，一起开吃</div>
-            <div class="desc">小云仔从中间的电饭煲给大家「放饭/分饭」，coser 们接过盒饭，喊一句方言「开饭咧 / 七饭咯 / 恰饭啦」一起开吃。抓真实的吃饭、聊天、笑场画面，不摆拍。</div></div></div>
+            <div class="desc">小云仔从中间的电饭煲给大家「放饭/分饭」，coser 接过盒饭，喊一句方言「开饭咧 / 七饭咯 / 恰饭啦」一起开吃。抓真实画面，不摆拍。</div></div></div>
           <div class="shot"><div class="num">3</div><div class="sb">
             <div class="pic">细节 · 反差特写</div>
-            <div class="desc">特写精致 cos 妆造 + 手里的盒饭、电饭煲、举碗的手、小云仔憨态，堆出「神仙下凡蹲着啃盒饭」的反差与烟火气。</div></div></div>
+            <div class="desc">特写精致 cos 妆造 + 手里的盒饭、电饭煲、小云仔憨态，堆出「神仙下凡蹲着啃盒饭」的反差与烟火气。</div></div></div>
           <div class="shot"><div class="num">4</div><div class="sb">
             <div class="pic">收尾 · 全景同框</div>
             <div class="desc">拉全景，一圈 coser 围着电饭煲吃饭的画面定格。配字「在漫展吃了顿盒饭，同桌全是神仙」。</div></div></div>
         </div>
       </div>
       <div style="font-weight:700;color:var(--rice-deep);margin:16px 0 4px">画面参考</div>
-      <div class="imgs g2">
+      <div class="imgs">
         <div class="ph"><img src="images/real/tour-01.jpg" alt="围炉参考"><div class="cap">街头蹲坐吃盒饭</div></div>
         <div class="ph"><img src="images/real/tour-03.jpg" alt="围炉参考"><div class="cap">cos 搭子围坐吃便当</div></div>
       </div>
@@ -290,94 +252,73 @@
     </div>
   </section>
 
-  <!-- 035 现场物料文案 -->
+  <!-- 04 物料文案 -->
   <section>
     <div class="sec-head"><div class="no">·</div>
-      <div><h2>现场物料文案（给设计参考）</h2><div class="en">PROPS COPY · 横幅 + 易拉宝</div></div></div>
-
+      <div><h2>现场物料文案（给设计参考）</h2><div class="en">PROPS COPY</div></div></div>
     <div class="card">
-      <h3>道具横幅 · 让路人一眼好奇（多版备选）</h3>
-      <p class="lead">横幅是给现场路人看的「钩子」，要够大、够直白、够有梗，让人忍不住凑近看、想拍。下面几版供挑选：</p>
+      <h3>手持横幅 / 手举牌 · 让路人一眼好奇</h3>
+      <p class="lead">BW 无摊位，横幅做成<b>手持款 / 手举牌</b>，跟着流动小队走，路人看到就想凑近、想拍。多版备选：</p>
       <div class="ideas">
-        <div class="idea">
-          <div class="ih"><span class="ist">梗感向</span><span class="itag">「鉴赏米饭大会 · 诚邀施舍一勺米」</span></div>
-          <ul class="clean"><li>沿用你给的「鉴赏米饭大会」，加一句自嘲式召唤，幽默感更强、互动指向更明确</li></ul>
-        </div>
-        <div class="idea">
-          <div class="ih"><span class="ist">直给向</span><span class="itag">「米饭联盟全国集米中 · 求投喂一勺」</span></div>
-          <ul class="clean"><li>路人秒懂在干嘛，「求投喂」自带互动邀请，看到的人容易顺手参与</li></ul>
-        </div>
-        <div class="idea">
-          <div class="ih"><span class="ist">反差向</span><span class="itag">「这群人端着电饭煲，在要饭」</span></div>
-          <ul class="clean"><li>大白话 + 反差荒诞，最抓眼球，路人第一反应「啥情况」就成功了</li></ul>
-        </div>
-        <div class="idea">
-          <div class="ih"><span class="ist">悬念向</span><span class="itag">「全国的米，差你这一勺」</span></div>
-          <ul class="clean"><li>制造「为什么差我一勺」的好奇，引导路人上前问、上前投</li></ul>
-        </div>
-        <div class="idea">
-          <div class="ih"><span class="ist">归属向</span><span class="itag">「timi 们，回家吃饭了」</span></div>
-          <ul class="clean"><li>面向自家玩家的召唤，亲切、有归属感，适合玩家浓度高的场</li></ul>
-        </div>
+        <div class="idea"><div class="ih"><span class="ist">梗感向</span><span class="itag">「鉴赏米饭大会 · 诚邀施舍一勺米」</span></div></div>
+        <div class="idea"><div class="ih"><span class="ist">直给向</span><span class="itag">「米饭联盟全国集米中 · 求投喂一勺」</span></div></div>
+        <div class="idea"><div class="ih"><span class="ist">反差向</span><span class="itag">「这群人端着电饭煲，在要饭」</span></div></div>
+        <div class="idea"><div class="ih"><span class="ist">归属向</span><span class="itag">「timi 们，回家吃饭了」</span></div></div>
       </div>
-      <div class="note">建议主横幅用「梗感向 / 反差向」抓路人，搭配一条小的「归属向」给玩家。最终选哪版你定，可多版并用。</div>
     </div>
-
     <div class="card">
-      <h3>背景说明易拉宝 · 文案（给设计同学做版式参考）</h3>
-      <p class="lead">易拉宝放在点位旁，给路人和玩家讲清楚「这是什么事、我能干嘛」。以下为成稿文案，设计同学可据此排版：</p>
+      <h3>背景说明牌 · 文案（给设计同学排版参考）</h3>
+      <p class="lead">BW 用<b>小型立牌 / 手举说明牌</b>替代易拉宝，给路人讲清楚「这是什么、我能干嘛」：</p>
       <div class="note" style="background:#FFFCF5;border-left-color:var(--rice-deep);color:var(--ink);line-height:1.9">
         <div style="font-size:18px;font-weight:800;color:var(--rice-deep);margin-bottom:4px">米饭联盟 · 全国集米中</div>
         <div style="font-size:14px;color:var(--ink2);margin-bottom:10px">—— 一路讨米，攒满一锅，带去深圳村晚 ——</div>
         <div>我们是 <b>米饭联盟</b>，天美玩家的自家组织。<br>
-        这阵子，我们端着电饭煲跑遍全国，在各个城市的现场<b>一勺一勺讨米、集米</b>。<br>
-        每座城讨来的米，最后都会<b>汇聚到天美周年庆深圳站</b>——<br>
-        全国的米凑满一锅，<b>开一场米饭联盟村晚，大家一起吃顿饭</b>。<br><br>
+        这阵子，我们端着电饭煲跑遍全国，一勺一勺<b>讨米、集米</b>。<br>
+        每场讨来的米，最后都会<b>汇聚到天美周年庆深圳站</b>，全国的米凑满一锅，<b>开一场村晚一起吃饭</b>。<br><br>
         路过的你，<b>往锅里投一勺</b>，就是这锅全国米饭的一份子。<br>
         <span style="color:var(--red);font-weight:700">来，给米饭联盟添一勺米 →</span></div>
       </div>
-      <div class="imgcap">※ 以上为文案内容参考，视觉版式、字号、配图由设计同学发挥；可按物料尺寸增删。</div>
+      <div class="imgcap">※ 文案内容参考，视觉版式、物料形态由设计同学按 BW 现场条件发挥。</div>
     </div>
   </section>
 
-  <!-- 04 需求配合清单 -->
+  <!-- 05 需求 -->
   <section>
-    <div class="sec-head"><div class="no">04</div>
-      <div><h2>需求配合清单</h2><div class="en">SUPPORT NEEDED · 4 项</div></div></div>
-
+    <div class="sec-head"><div class="no">05</div>
+      <div><h2>需求配合清单</h2><div class="en">SUPPORT NEEDED</div></div></div>
     <div class="card">
       <div class="needs">
         <div class="need">
           <div class="nn">1</div>
-          <div class="nt">摊位落地支持</div>
-          <div class="nx">在活动现场给米饭联盟一个摊位 / 点位，用于签到、放置电饭煲装置、作为集米讨米的起点与打卡位。</div>
+          <div class="nt">入场资格 / 通行支持</div>
+          <div class="nx">流动小队（小云仔 + 米饭 coser + 随行工作人员）需要进场。如需购票或证件，希望给到<b>入场支持</b>。</div>
           <span class="must">必需</span>
         </div>
         <div class="need">
           <div class="nn">2</div>
-          <div class="nt">线下整活放大支持 · 达人 / KOL 参与</div>
-          <div class="nx">协助安排<b>达人 / KOL 一起来玩</b>帮内容破圈，参与方式按优先级：<br>① <b>最佳</b>：走完整路径——既<b>讨米</b>（端煲找人要）又<b>给米</b>（往别人煲里投）<br>② 其次：参与<b>讨米</b>环节出镜<br>③ 再次：参与<b>给米</b>（被讨时投一勺、互动一下）</div>
-          <span class="nice">加分</span>
+          <div class="nt">现场走动 / 围炉空地许可</div>
+          <div class="nx">允许流动小队在现场走动集米，并能找一小块空地完成<b>围炉吃饭</b>的拍摄（无需固定点位，短时占用即可）。</div>
+          <span class="must">必需</span>
         </div>
         <div class="need">
           <div class="nn">3</div>
-          <div class="nt">活动门票支持</div>
-          <div class="nx">如该活动需购票入场，希望能给到米饭（参与玩家）<b>入场门票支持</b>，让我们的玩家顺利进场参与。</div>
-          <span class="nice">视情况</span>
+          <div class="nt">达人 / KOL 参与</div>
+          <div class="nx">协助安排达人 / KOL 一起玩，按优先级：① 走完整路径——<b>讨米 + 给米</b>；② 参与<b>讨米</b>出镜；③ 参与<b>给米</b>（被讨时投一勺）。</div>
+          <span class="nice">加分</span>
         </div>
         <div class="need">
           <div class="nn">4</div>
           <div class="nt">伴手礼支持</div>
-          <div class="nx">希望能提供一份当天活动的<b>周边伴手礼聚合包</b>（给到参与的米饭 coser），作为参与激励与现场福利。</div>
+          <div class="nx">如有当天活动的<b>周边伴手礼聚合包</b>，希望能给到参与的米饭 coser，作为参与激励。</div>
           <span class="nice">加分</span>
         </div>
       </div>
-      <div class="note">以上需求按你的活动实际情况量力支持即可，<b>摊位是落地前提</b>，其余我们可以一起商量怎么搭最顺。具体对接欢迎随时找我们。</div>
+      <div class="note">BW 版已尽量压到最轻，<b>入场 + 走动/围炉空地</b>是落地前提，其余一起商量。具体对接欢迎随时找我们。</div>
     </div>
   </section>
 
   <footer>
-    米饭联盟「全城巡游集米」· 外部项目协作沟通稿　|　欢迎各项目组带我们一起玩，细节随时对接
+    米饭联盟「集米」内容 · BW 现场轻量协作版　|　欢迎带我们一起玩，细节随时对接
   </footer>
 </div>
 </body>
